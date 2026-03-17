@@ -76,7 +76,7 @@ app.delete('/api/urls/:id', async (req, res) => {
 });
 
 // Serve frontend for any other route (fallback)
-app.get('/:path*', (req, res) => {
+app.get('/:path(.*)', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
 });
 
