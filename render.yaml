@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: keep-alive-service
+    runtime: node
+    buildCommand: npm install && cd backend && npm install && cd ../frontend && npm install && npm run build
+    startCommand: cd backend && node server.js
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: NODE_ENV
+        value: production
+      - key: FIREBASE_SERVICE_ACCOUNT
+        sync: false # Set this in the Render dashboard manually
+      - key: SELF_URL
+        sync: false # Set this in the Render dashboard manually (e.g., https://your-service.onrender.com)
+    disk:
+      name: keep-alive-disk
+      mountPath: /data
+      sizeGB: 1

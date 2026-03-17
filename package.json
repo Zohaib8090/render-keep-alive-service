@@ -1,0 +1,11 @@
+{
+  "name": "keep-alive-root",
+  "version": "1.0.0",
+  "description": "Root orchestration for Keep Alive service",
+  "main": "backend/server.js",
+  "scripts": {
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "build": "cd frontend && npm run build",
+    "start": "cd backend && node server.js"
+  }
+}
